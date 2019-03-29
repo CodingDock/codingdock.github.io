@@ -87,7 +87,7 @@ docker run --name <container-name> -d <imange-name:tag>
 docker ps
 ```
 
-![1553769863769](../../../AppData/Roaming/Typora/typora-user-images/1553769863769.png)
+![1553769863769](1553769863769.png)
 
 > 说明： docker ps -a  查看所有容器，包括已经停止的
 
