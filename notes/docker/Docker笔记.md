@@ -14,9 +14,9 @@
 
 官网：https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
+![1554805901295](1554805901295.png)
 
-
-## 服务启动&关闭
+## 服务启动&关闭  
 
 启动        systemctl start docker
 守护进程重启   sudo systemctl daemon-reload
@@ -105,6 +105,15 @@ docker stop <container-id>||<name>
 docker start <container-id>||<name>
 ```
 
+#### 查看控制台日志
+
+```shell
+#滚动查看 类似 tail -f
+docker logs -f <container-id> 
+```
+
+
+
 #### 删除容器
 
 ```
@@ -112,6 +121,14 @@ docker rm <container-id>
 ```
 
 > 说明：停止的容器才能删除
+
+```shell
+docker rm -f <container-id>
+```
+
+> 强制删除容器，即使容器正在运行
+
+
 
 #### 端口映射
 
@@ -127,13 +144,53 @@ docker run --name <container-name> -d -p 8888:8080 <imange-name:tag>
 docker logs <container-id>
 ```
 
- 
+#### 以交互方式进入驱动的容器
+
+```shell
+docker exec -it <container-name>|<container-id> bash
+```
+
+#### 容器与主机之间数据拷贝
+
+```shell
+#容器数据拷贝到主机
+docker cp <container-name|id>:<container-filepath> /host-path/
+如：docker cp mysql:/etc/mysql .
+
+#主机数据拷贝到容器
+docker cp /host-path/ <container-name|id>:<container-filepath> 
+如：docker cp /var/local/mysql mysql:/etc/mysql 
+```
 
 
 
+##  数据卷
 
+ 作用：绕过ufs存储，直接操作host存储。实现数据持久存储和共用
 
+命令：
 
+```shell
+docker run -v /host-path/:/container-path/ <container-name>
+```
+
+### 查看所有数据卷
+
+```
+docker volume ls
+```
+
+### 删除指定数据卷
+
+```
+docker volume rm [volume_name]
+```
+
+### 删除所有未关联的数据卷
+
+```
+docker volume rm $(docker volume ls -qf dangling=true)
+```
 
 
 
