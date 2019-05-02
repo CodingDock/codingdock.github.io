@@ -62,7 +62,7 @@
 
 ## 参考与引用
 
-[BlockingQueue](<https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/BlockingQueue.html>)
+`BlockingQueue` 的 [JavaDoc](<https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/BlockingQueue.html>)
 
-[BlockingDeque](<https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/BlockingDeque.html>)
+`BlockingDeque` 的 [JavaDoc](<https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/BlockingDeque.html>)
 
