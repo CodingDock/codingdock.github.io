@@ -40,3 +40,13 @@
 
 ### [关于高并发下抢购秒杀促销的一些想法](notes/实践/关于高并发下抢购秒杀促销的一些想法.md)
 
+
+
+
+
+## 中间件
+
+### RocketMQ
+
+#### [RocketMQ自动创建Topic的QueueNum为什么总是4](notes/中间件/RocketMQ/RocketMQ自动创建Topic的QueueNum为什么总是4.md)
+
